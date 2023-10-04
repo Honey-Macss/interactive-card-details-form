@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
-    <main className=" min-h-[100svh] grid grid-cols-[30%_1fr]">
+    <main className=" min-h-[100svh] grid grid-cols-[30%_1fr] lg1:grid-cols-[unset] lg1:grid-rows-[30%_1fr] ">
       <Cards />
       <Router>
         <Routes>

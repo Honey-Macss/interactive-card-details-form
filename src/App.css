@@ -11,7 +11,12 @@
 .cardWay{
   background: url("./Components/images/bg-main-desktop.png");
   background-size: contain;
+}
 
+@media only screen and (max-width: 1179px){
+  .cardWay{
+    background: url("./Components/images/bg-main-mobile.png");
+  }
 }
 
 
