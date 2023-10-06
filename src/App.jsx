@@ -2,19 +2,39 @@ import './App.css';
 import Cards from './Components/Cards';
 import Completed from './Components/Completed';
 import DetailInput from './Components/DetailInput';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, createContext } from 'react'; 
+
+export const AppContext = createContext();
 
 function App() {
+  // states 
+  const [nameValue, setNameValue] = useState("");
+  const [numberValue, setNumberValue] = useState("");
+  const [monthValue, setMonthValue] = useState("");
+  const [yearValue, setYearValue] = useState("");
+  const [cvcValue, setCvcValue] = useState("");
+
+  
+  const [nameCard, setNameCard] = useState("JANE APPLESEED");
+  const [numberCard, setNumberCard] = useState("0000 0000 0000 0000");
+  const [monthCard, setMonthCard] = useState("00");
+  const [yearCard, setYearCard] = useState("00");
+  const [cvcCard, setCvcCard] = useState("000")
+
   return (
-    <main className=" min-h-[100svh] grid grid-cols-[30%_1fr] lg1:grid-cols-[unset] lg1:grid-rows-[30%_1fr] ">
-      <Cards />
-      <Router>
-        <Routes>
-          <Route path='/' element={<DetailInput />} />
-          <Route path='/completed' element={<Completed />} />
-        </Routes>
-      </Router>
-    </main>
+    <AppContext.Provider value={{nameValue, setNameValue, numberValue, setNumberValue, monthValue, setMonthValue, yearValue, setYearValue, cvcValue, setCvcValue,
+    nameCard, setNameCard, numberCard, setNumberCard, monthCard, setMonthCard, yearCard, setYearCard, cvcCard, setCvcCard}}>
+      <main className=" min-h-[100svh] grid grid-cols-[30%_1fr] lg1:grid-cols-[unset] lg1:grid-rows-[30%_1fr] ">
+        <Cards />
+        <Router>
+          <Routes>
+            <Route path='/' element={<DetailInput />} />
+            <Route path='/completed' element={<Completed />} />
+          </Routes>
+        </Router>
+      </main>
+    </AppContext.Provider>
   );
 }
 
