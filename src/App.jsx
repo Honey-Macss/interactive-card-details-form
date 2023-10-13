@@ -9,13 +9,6 @@ export const AppContext = createContext();
 
 function App() {
   // states 
-  const [nameValue, setNameValue] = useState("");
-  const [numberValue, setNumberValue] = useState("");
-  const [monthValue, setMonthValue] = useState("");
-  const [yearValue, setYearValue] = useState("");
-  const [cvcValue, setCvcValue] = useState("");
-
-  
   const [nameCard, setNameCard] = useState("JANE APPLESEED");
   const [numberCard, setNumberCard] = useState("0000 0000 0000 0000");
   const [monthCard, setMonthCard] = useState("00");
@@ -23,8 +16,7 @@ function App() {
   const [cvcCard, setCvcCard] = useState("000")
 
   return (
-    <AppContext.Provider value={{nameValue, setNameValue, numberValue, setNumberValue, monthValue, setMonthValue, yearValue, setYearValue, cvcValue, setCvcValue,
-    nameCard, setNameCard, numberCard, setNumberCard, monthCard, setMonthCard, yearCard, setYearCard, cvcCard, setCvcCard}}>
+    <AppContext.Provider value={{nameCard, setNameCard, numberCard, setNumberCard, monthCard, setMonthCard, yearCard, setYearCard, cvcCard, setCvcCard}}>
       <main className=" min-h-[100svh] grid grid-cols-[30%_1fr] lg1:grid-cols-[unset] lg1:grid-rows-[30%_1fr] ">
         <Cards />
         <Router>
