@@ -46,7 +46,7 @@ const DetailInput = () => {
     <div className=" bg-[#ffffff] flex justify-center items-center sm:px-[3rem] mi:px-[1.5rem] mi2:px-[0.7rem] mi:mb-[5rem]">
         <form onSubmit={handleSubmit} className=" w-[25rem]  2xl:w-[20rem] sm:w-[100%] ml-[5rem] lg1:ml-[0]" >
           <Inputs touched={touched.cardHolderName} errors={errors.cardHolderName} value={values.cardHolderName} setValue={((e) => {setFieldValue("cardHolderName", e.target.value); })} label={labels[0]} placeHolders={placeHolders[0]} type="text" />
-          <Inputs touched={touched.cardNumber} errors={errors.cardNumber} value={values.cardNumber} setValue={((e) => {setFieldValue("cardNumber", e.target.value); })} label={labels[1]} placeHolders={placeHolders[1]} type="text" />
+          <Inputs touched={touched.cardNumber} errors={errors.cardNumber} value={values.cardNumber.replace(/\W/gi, '').replace(/(.{4})/g, '$1 ').trim()} setValue={((e) => {setFieldValue("cardNumber", e.target.value.slice(0, 19)); })} label={labels[1]} placeHolders={placeHolders[1]} type="text" />
 
           <span className=" flex gap-[0.6rem] mi:gap-[0.4rem]">
             <Inputs touched={touched.expiryDateMm} errors={errors.expiryDateMm} value={values.expiryDateMm} setValue={((e) => {setFieldValue("expiryDateMm", e.target.value.slice(0, 2)); })} label={labels[2]} placeHolders={placeHolders[2]} type="number" width="w-[5rem]" />
