@@ -7,16 +7,21 @@ import { AppContext } from "../App";
 
 const Completed = () => {
   const {setNameCard, setNumberCard, setMonthCard, setYearCard, setCvcCard} = useContext(AppContext);
+
+  // calling the useNavigate function
   const navigate = useNavigate();
 
   const resetCardDetails = async() => {
     await new Promise((res) => setTimeout(res, 1000));
+
+    // returning the card details to their default states
     setNameCard("JANE APPLESEED");
     setNumberCard("0000 0000 0000 0000");
     setMonthCard("00");
     setYearCard("00");
     setCvcCard("000");
 
+    // navigating/routing back to the home page once this function is called
     navigate("/");
   };
 

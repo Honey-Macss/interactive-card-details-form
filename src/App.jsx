@@ -8,7 +8,7 @@ import { useState, createContext } from 'react';
 export const AppContext = createContext();
 
 function App() {
-  // states 
+  //default states on card
   const [nameCard, setNameCard] = useState("JANE APPLESEED");
   const [numberCard, setNumberCard] = useState("0000 0000 0000 0000");
   const [monthCard, setMonthCard] = useState("00");
@@ -21,7 +21,10 @@ function App() {
         <Cards />
         <Router>
           <Routes>
+            {/* Route to the page that has the form */}
             <Route path='/' element={<DetailInput />} />
+            
+            {/* Route to the "thank you page" */}
             <Route path='/completed' element={<Completed />} />
           </Routes>
         </Router>
