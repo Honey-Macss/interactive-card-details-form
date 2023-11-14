@@ -29,7 +29,7 @@ const DetailInput = () => {
     setYearCard(values.expiryDateYy.toString().slice(-2));
     setCvcCard(values.cvc);
 
-    // navigating/routing to the "thank you page once teh card details have been updated"
+    // navigating/routing to the "thank you page" once the card details have been updated
     navigate("/completed");
   };
  
